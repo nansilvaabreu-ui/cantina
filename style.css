@@ -12,12 +12,66 @@ body {
     justify-content: center;
 }
 
+/* --------- ESTILOS DO MENU LATERAL --------- */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* Escondido por padrão */
+    z-index: 1000;
+    justify-content: flex-end; /* Faz o menu abrir na direita */
+}
+
+.menu-overlay.active {
+    display: flex; /* Mostra o menu quando tem a classe active */
+}
+
+.menu-content {
+    background-color: #7b1113;
+    width: 70%;
+    max-width: 300px;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.close-btn {
+    color: #f5b027;
+    font-size: 35px;
+    align-self: flex-end;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.menu-content a {
+    color: #FBF4EA;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(245, 176, 39, 0.3);
+    padding-bottom: 10px;
+}
+/* ------------------------------------------- */
+
 .container {
     width: 100%;
     background-color: #fffaf0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 header {
@@ -49,7 +103,6 @@ header {
     height: 50px;
 }
 
-
 .card-highlight {
     width: 90%;
     background-color: #f9ebd2;
@@ -60,11 +113,6 @@ header {
     align-items: center;
     gap: 15px;
     border: 1px solid #ebd4b0;
-}
-
-.card-highlight-icon {
-    width: 45px;
-    height: 45px;
 }
 
 .card-highlight-text h3 {
@@ -105,6 +153,7 @@ header {
     background-color: #f5b027;
 }
 
+/* --------- ESTILOS DO CARROSSEL DE ARRASTAR --------- */
 .card-carousel {
     width: 85%;
     display: flex;
@@ -113,12 +162,28 @@ header {
     margin-bottom: 20px;
 }
 
-.card-carousel img {
+.carousel-track {
+    display: flex;
     width: 100%;
+    gap: 15px;
+    overflow-x: auto; /* Permite rolar para os lados */
+    scroll-snap-type: x mandatory; /* Faz a imagem "travar" centralizada */
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+}
+
+.carousel-track img {
+    flex: 0 0 100%; /* Faz a imagem ocupar 100% do espaço do pai */
+    scroll-snap-align: center; /* Centraliza ao arrastar */
     height: 280px;
     object-fit: cover;
     border-radius: 20px;
 }
+/* ---------------------------------------------------- */
 
 .dots {
     display: flex;
@@ -154,11 +219,6 @@ header {
     text-transform: uppercase;
 }
 
-.linha-sobre {
-    background-color: #f5b027;
-    color: #f5b027;
-}
-
 .texto_1 {
     border-bottom: 2px solid #f5b027;
     width: 100px;
@@ -177,7 +237,6 @@ header {
     line-height: 1.5;
 }
 
-
 .gallery {
     width: 90%;
     display: flex;
@@ -193,18 +252,18 @@ header {
     border-radius: 15px;
 }
 
-
 footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .fundo {
     height: 200px;
     width: 100vw;
+    object-fit: cover;
 }
 
 .logo-footer {
@@ -218,7 +277,7 @@ footer {
     display: flex;
     gap: 15px;
     position: absolute;
-    margin: 130px;
+    margin-top: 130px;
 }
 
 .bolinhas {

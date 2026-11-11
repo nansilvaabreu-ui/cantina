@@ -8,10 +8,21 @@
 </head>
 <body>
 
+    <!-- Estrutura do Menu Lateral -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <span class="close-btn" id="closeMenu">&times;</span>
+            <a href="#">Início</a>
+            <a href="#">Nossos Produtos</a>
+            <a href="#">Mais Vendidos</a>
+            <a href="#">Sobre Nós</a>
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <img class="logo" src="./img/Logo.png" alt="logo">
-            <div class="menu-icon">&#9776;</div>
+            <div class="menu-icon" id="openMenu">&#9776;</div>
         </header>
 
         <img class="hero-banner" src="./img/cantina.webp" alt="Fachada Cantina">
@@ -24,31 +35,42 @@
             </div>
         </div>
 
+        <!-- Seção: Nossos Produtos -->
         <div class="section-title">
             <h2>Nossos Produtos</h2>
         </div>
         <div class="card-carousel">
-            <img src="./img/coxinha.jpeg" alt="Coxinhas">
+            <div class="carousel-track">
+                <img src="./img/coxinha.jpeg" alt="Coxinha">
+                <img src="./img/doce.jpeg" alt="Bolo"> 
+                <img src="./img/coca.jpeg" alt="Salgado de Forno">
+            </div>
             <div class="dots">
                 <div class="dot active"></div>
                 <div class="dot"></div>
+                <div class="dot"></div> <!-- Terceira bolinha adicionada -->
             </div>
         </div>
 
+        <!-- Seção: Mais Vendidos -->
         <div class="section-title">
             <h2>Mais Vendidos</h2>
         </div>
         <div class="card-carousel">
-            <img src="./img/croassant.jpeg" alt="Croissant de Chocolate">
+            <div class="carousel-track">
+                <img src="./img/croassant.jpeg" alt="Croissant de Chocolate">
+                <img src="./img/bauru.jpeg" alt="Bauru">
+                <img src="./img/bolo.jpeg" alt="bolo">
+            </div>
             <div class="dots">
                 <div class="dot active"></div>
                 <div class="dot"></div>
+                <div class="dot"></div> <!-- Terceira bolinha adicionada -->
             </div>
         </div>
 
         <div class="card-about">
             <h3 class="texto_1">Sobre Nós</h3>
-           
             <h4>Conheça a história por trás dos melhores lanches de Jandira.</h4>
             <p>A JTT Cantina do SENAI Jandira oferece praticidade e sabor no dia a dia dos alunos, professores e funcionários, com opções de lanches e bebidas para aproveitar os intervalos e recarregar as energias!</p>
         </div>
@@ -75,5 +97,18 @@
         </footer>
     </div>
 
+    <script>
+        const menuOverlay = document.getElementById('menuOverlay');
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        openMenu.addEventListener('click', () => {
+            menuOverlay.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
