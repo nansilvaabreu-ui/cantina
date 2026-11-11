@@ -12,7 +12,6 @@ body {
     justify-content: center;
 }
 
-/* --------- ESTILOS DO MENU LATERAL --------- */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -20,13 +19,13 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    display: none; /* Escondido por padrão */
+    display: none;
     z-index: 1000;
-    justify-content: flex-end; /* Faz o menu abrir na direita */
+    justify-content: flex-end;
 }
 
 .menu-overlay.active {
-    display: flex; /* Mostra o menu quando tem a classe active */
+    display: flex;
 }
 
 .menu-content {
@@ -63,7 +62,6 @@ body {
     border-bottom: 1px solid rgba(245, 176, 39, 0.3);
     padding-bottom: 10px;
 }
-/* ------------------------------------------- */
 
 .container {
     width: 100%;
@@ -153,7 +151,6 @@ header {
     background-color: #f5b027;
 }
 
-/* --------- ESTILOS DO CARROSSEL DE ARRASTAR --------- */
 .card-carousel {
     width: 85%;
     display: flex;
@@ -166,24 +163,23 @@ header {
     display: flex;
     width: 100%;
     gap: 15px;
-    overflow-x: auto; /* Permite rolar para os lados */
-    scroll-snap-type: x mandatory; /* Faz a imagem "travar" centralizada */
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
     padding-bottom: 10px;
-    scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+    scrollbar-width: none;
 }
 
 .carousel-track::-webkit-scrollbar {
-    display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+    display: none;
 }
 
 .carousel-track img {
-    flex: 0 0 100%; /* Faz a imagem ocupar 100% do espaço do pai */
-    scroll-snap-align: center; /* Centraliza ao arrastar */
+    flex: 0 0 100%;
+    scroll-snap-align: center;
     height: 280px;
     object-fit: cover;
     border-radius: 20px;
 }
-/* ---------------------------------------------------- */
 
 .dots {
     display: flex;
@@ -196,10 +192,12 @@ header {
     height: 6px;
     background-color: #d1b89d;
     border-radius: 50%;
+    display: none;
 }
 
 .dot.active {
     background-color: #7b1113;
+    display: none;
 }
 
 .card-about {
@@ -229,6 +227,7 @@ header {
     color: #6b3e2e;
     font-weight: normal;
     margin-bottom: 12px;
+    display: none;
 }
 
 .card-about p {
@@ -381,13 +380,6 @@ footer {
         width: fit-content;
     }
 
-    .linha-slogan {
-        width: 100%;
-        height: 4px;
-        background-color: #f5b027;
-        border-radius: 2px;
-    }
-
     .footer-slogan {
         color: #FFFFFF;
         font-weight: 800;
@@ -397,5 +389,131 @@ footer {
         text-align: center;
         margin: 6px 0;
         white-space: nowrap;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        background-color: #fffaf0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        background-color: #fffaf0;
+    }
+
+
+    header {
+        width: 100%;
+        padding: 18px 80px;
+    }
+
+    .logo {
+        height: 65px;
+    }
+
+    .hero-banner {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+    }
+
+
+    .card-highlight,
+    .card-carousel,
+    .section-title,
+    .card-about,
+    .gallery {
+        width: 85%;
+        max-width: 1000px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-highlight {
+        padding: 20px 40px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .card-highlight-text h3 {
+        font-size: 16px;
+    }
+
+    .card-highlight-desc {
+        font-size: 13px;
+        max-width: 280px;
+    }
+
+    .carousel-track {
+        gap: 20px;
+    }
+
+    .carousel-track img {
+        flex: 0 0 calc(33.333% - 13.33px);
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .gallery {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .gallery img {
+        width: 50%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    footer {
+        width: 100%;
+        position: relative;
+    }
+
+    .fundo {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .footer-content {
+        position: absolute;
+        bottom: 40px;
+        width: 85%;
+        max-width: 900px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-footer {
+        position: static;
+        height: 200px;
+    }
+
+    .bolinhas {
+        width: 50px;
+        height: 50px;
+        margin-left: 20px;
+    }
+
+    .icones-redes {
+        height: 25px;
+    }
+
+    .footer-slogan {
+    font-size: 20px;
+    border-bottom: 4px solid #f5b027;
+    border-top: 4px solid #f5b027;
+    width: 320px;
+    margin-left: 100px;
     }
 }
