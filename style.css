@@ -293,3 +293,109 @@ footer {
 .icones-redes {
     height: 17px;
 }
+
+@media screen and (min-width: 768px) {
+
+    .hero-banner {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .carousel-track img {
+        flex: 0 0 48%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .gallery {
+        flex-direction: row;
+        width: 90%;
+        gap: 15px;
+    }
+
+    .gallery img {
+        width: 50%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    footer {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .fundo {
+        width: 100%;
+        height: 370px;
+        object-fit: cover;
+    }
+
+    .footer-content {
+        position: absolute;
+        bottom: 35px;
+        width: 85%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-footer {
+        position: static;
+        margin: 0;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .social-icons {
+        position: static;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .bolinhas {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: #f5b027;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icones-redes {
+        height: 14px;
+    }
+
+    .footer-slogan-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+    }
+
+    .linha-slogan {
+        width: 100%;
+        height: 4px;
+        background-color: #f5b027;
+        border-radius: 2px;
+    }
+
+    .footer-slogan {
+        color: #FFFFFF;
+        font-weight: 800;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-align: center;
+        margin: 6px 0;
+        white-space: nowrap;
+    }
+}
